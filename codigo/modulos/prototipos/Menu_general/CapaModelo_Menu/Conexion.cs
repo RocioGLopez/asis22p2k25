@@ -7,52 +7,39 @@ using System.Data.Odbc;
 
 namespace CapaModelo_Menu
 {
-    class Conexion
+   public class Conexion
     {
-            // Método para abrir conexión ODBC
-            public OdbcConnection AbrirConexion()
+        public OdbcConnection conexion()
+        {
+            //creacion de la conexion via ODBC
+            OdbcConnection conn = new OdbcConnection("Dsn=segundoparcial2k25");
+            try
             {
-                // Creación de la conexión via ODBC
-                OdbcConnection conn = new OdbcConnection("Dsn=segundoparcial2k25");
-                try
-                {
-                    conn.Open();
-                    Console.WriteLine("Conexión ODBC abierta correctamente");
-                }
-                catch (OdbcException ex)
-                {
-                    Console.WriteLine($"Error al conectar: {ex.Message}");
-                    throw; // Re-lanzar la excepción para manejarla arriba
-                }
-                return conn;
+                conn.Open();
             }
-
-            // Método para cerrar la conexión
-            public void CerrarConexion(OdbcConnection conn)
+            catch (OdbcException)
             {
-                try
-                {
-                    if (conn != null && conn.State == ConnectionState.Open)
-                    {
-                        conn.Close();
-                        Console.WriteLine("Conexión ODBC cerrada correctamente");
-                    }
-                }
-                catch (OdbcException ex)
-                {
-                    Console.WriteLine($"Error al cerrar conexión: {ex.Message}");
-                }
+                Console.WriteLine("No Conectó");
             }
-
-            // Método alternativo usando using (recomendado)
-            public OdbcConnection CrearConexion()
-            {
-                return new OdbcConnection("Dsn=controlempleados");
-            }
+            return conn;
         }
 
-
-
-
+        //metodo para cerrar la conexion
+        public void desconexion(OdbcConnection conn)
+        {
+            try
+            {
+                conn.Close();
+            }
+            catch (OdbcException)
+            {
+                Console.WriteLine("No Conectó");
+            }
+        }
     }
 
+
+}
+
+
+  

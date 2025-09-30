@@ -35,11 +35,11 @@ namespace CapaVista_Menu
             this.consultaBitacoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.identificacionAlumnoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_ayuda = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Dgv1 = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtMarca = new System.Windows.Forms.TextBox();
@@ -47,8 +47,9 @@ namespace CapaVista_Menu
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnVerRegistros = new System.Windows.Forms.Button();
+            this.btnReporte = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -60,7 +61,7 @@ namespace CapaVista_Menu
             this.salirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1283, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1062, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -99,15 +100,15 @@ namespace CapaVista_Menu
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
-            // button1
+            // btn_ayuda
             // 
-            this.button1.Location = new System.Drawing.Point(57, 256);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 43);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "ayuda";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.btn_ayuda.Location = new System.Drawing.Point(57, 256);
+            this.btn_ayuda.Name = "btn_ayuda";
+            this.btn_ayuda.Size = new System.Drawing.Size(87, 43);
+            this.btn_ayuda.TabIndex = 3;
+            this.btn_ayuda.Text = "ayuda";
+            this.btn_ayuda.UseVisualStyleBackColor = true;
+            this.btn_ayuda.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // btnEliminar
             // 
@@ -118,6 +119,7 @@ namespace CapaVista_Menu
             this.btnEliminar.TabIndex = 16;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnEditar
             // 
@@ -128,6 +130,7 @@ namespace CapaVista_Menu
             this.btnEditar.TabIndex = 15;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnGuardar
             // 
@@ -138,17 +141,23 @@ namespace CapaVista_Menu
             this.btnGuardar.TabIndex = 14;
             this.btnGuardar.Text = "Guardar:";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // dataGridView1
+            // Dgv1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(404, 43);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(822, 394);
-            this.dataGridView1.TabIndex = 17;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.Dgv1.AllowUserToAddRows = false;
+            this.Dgv1.AllowUserToDeleteRows = false;
+            this.Dgv1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.Dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dgv1.Location = new System.Drawing.Point(403, 34);
+            this.Dgv1.Margin = new System.Windows.Forms.Padding(4);
+            this.Dgv1.Name = "Dgv1";
+            this.Dgv1.ReadOnly = true;
+            this.Dgv1.RowHeadersWidth = 51;
+            this.Dgv1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Dgv1.Size = new System.Drawing.Size(649, 321);
+            this.Dgv1.TabIndex = 17;
+            this.Dgv1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label5
             // 
@@ -156,19 +165,19 @@ namespace CapaVista_Menu
             this.label5.Location = new System.Drawing.Point(15, 126);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(102, 17);
+            this.label5.Size = new System.Drawing.Size(52, 17);
             this.label5.TabIndex = 23;
-            this.label5.Text = "Departamento:";
+            this.label5.Text = "Salario";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(61, 95);
+            this.label4.Location = new System.Drawing.Point(15, 94);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 17);
+            this.label4.Size = new System.Drawing.Size(110, 17);
             this.label4.TabIndex = 22;
-            this.label4.Text = "Puesto:";
+            this.label4.Text = "Nombre Puesto:";
             // 
             // txtMarca
             // 
@@ -197,12 +206,12 @@ namespace CapaVista_Menu
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(54, 67);
+            this.label1.Location = new System.Drawing.Point(15, 67);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 17);
+            this.label1.Size = new System.Drawing.Size(88, 17);
             this.label1.TabIndex = 18;
-            this.label1.Text = "Nombre:";
+            this.label1.Text = "Tipo  Puesto";
             // 
             // btnVerRegistros
             // 
@@ -213,12 +222,26 @@ namespace CapaVista_Menu
             this.btnVerRegistros.TabIndex = 24;
             this.btnVerRegistros.Text = "Lista De Empleados";
             this.btnVerRegistros.UseVisualStyleBackColor = true;
+            this.btnVerRegistros.Click += new System.EventHandler(this.btnVerRegistros_Click);
+            // 
+            // btnReporte
+            // 
+            this.btnReporte.Location = new System.Drawing.Point(186, 256);
+            this.btnReporte.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnReporte.Name = "btnReporte";
+            this.btnReporte.Size = new System.Drawing.Size(156, 34);
+            this.btnReporte.TabIndex = 26;
+            this.btnReporte.Text = "Ver Reporte";
+            this.btnReporte.UseVisualStyleBackColor = true;
+            this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
             // 
             // MenuGeneral
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1283, 450);
+            this.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.ClientSize = new System.Drawing.Size(1062, 393);
+            this.Controls.Add(this.btnReporte);
             this.Controls.Add(this.btnVerRegistros);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -226,11 +249,11 @@ namespace CapaVista_Menu
             this.Controls.Add(this.txtDesc);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.Dgv1);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_ayuda);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
@@ -238,7 +261,7 @@ namespace CapaVista_Menu
             this.Text = "MenuGeneral";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,11 +275,11 @@ namespace CapaVista_Menu
         private System.Windows.Forms.ToolStripMenuItem consultaBitacoraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem identificacionAlumnoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_ayuda;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView Dgv1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtMarca;
@@ -264,5 +287,6 @@ namespace CapaVista_Menu
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnVerRegistros;
+        private System.Windows.Forms.Button btnReporte;
     }
 }

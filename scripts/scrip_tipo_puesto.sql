@@ -1,0 +1,7 @@
+use bdasis22p2k25;
+CREATE TABLE TIPO_PUESTO(
+Pk_Id_TIPO_PUESTO int ,
+Cmp_NOMBRE_PUESTO varchar(60) ,
+Cmp_SALARIO double ,
+PRIMARY KEY (Pk_Id_TIPO_PUESTO)
+);
