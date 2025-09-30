@@ -31,5 +31,23 @@ namespace CapaVista_Menu
             CapaVista_Seguridad.frmBitacora bitacora = new CapaVista_Seguridad.frmBitacora();
             bitacora.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "AyudaRisko/AyudaRiskoAS2.chm", "MDI.html");
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "AyudaRisko/AyudaRiskoAS2.chm", "MDI.html");
+
+        
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

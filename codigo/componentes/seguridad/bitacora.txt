@@ -1,0 +1,38 @@
+commit e6d1426e012e6639e35d3bcaae3eb5df48fb61e5
+Author: Rocio López <guisell.alvarado@gmail.com>
+Date:   Tue Sep 30 09:54:52 2025 -0600
+
+    mantenimientos
+
+commit beb86eb4abe62ca917baad335dd2aae254724ef3
+Merge: a43d48e d1d60f9
+Author: daguilae <daguilae@hotmail.com>
+Date:   Tue Sep 30 05:57:38 2025 -0600
+
+    Merge pull request #1 from edelaguila/main
+    
+    actualizando repositorio examen
+
+commit d1d60f93837f1293a3eca16e9e141f6c5bd781d9
+Author: Esduardo Del Aguila <daguilae@yahoo.com>
+Date:   Mon Sep 29 21:21:06 2025 -0600
+
+    agregando menu ejecucion script
+
+commit 4b452d52a2ac18bb7027028d96ef4adfc2c27e9a
+Author: Esduardo Del Aguila <daguilae@yahoo.com>
+Date:   Mon Sep 29 18:39:36 2025 -0600
+
+    agregando componente seguridad
+
+commit 35c5efc9e133b02fe659691cd2493d43b46376e2
+Author: Esduardo Del Aguila <daguilae@yahoo.com>
+Date:   Mon Sep 29 14:23:02 2025 -0600
+
+    Agregando estructura del proyecto
+
+commit a43d48eebb54364c7432f0da6fc20a6b628a5e72
+Author: daguilae <daguilae@hotmail.com>
+Date:   Mon Sep 29 13:18:40 2025 -0600
+
+    Initial commit
