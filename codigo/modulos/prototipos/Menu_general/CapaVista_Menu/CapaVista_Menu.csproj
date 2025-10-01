@@ -35,6 +35,10 @@
     <Reference Include="CapaControlador_Menu">
       <HintPath>..\CapaControlador_Menu\bin\Debug\CapaControlador_Menu.dll</HintPath>
     </Reference>
+    <Reference Include="CapaControlador_Seguridad, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\componentes\seguridad\prototipo_v1\CapaControlador_Seguridad\bin\Debug\CapaControlador_Seguridad.dll</HintPath>
+    </Reference>
     <Reference Include="CapaVista_Seguridad">
       <HintPath>..\..\..\..\componentes\seguridad\prototipo_v1\CapaVista_Seguridad\bin\Debug\CapaVista_Seguridad.dll</HintPath>
     </Reference>

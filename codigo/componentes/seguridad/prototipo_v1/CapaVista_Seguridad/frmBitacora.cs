@@ -13,7 +13,7 @@ namespace CapaVista_Seguridad
 {
     public partial class frmBitacora : Form
     {
-        Controlador cn = new Controlador();
+        Controlador_Seguridad cn = new Controlador_Seguridad();
         public frmBitacora()
         {
             InitializeComponent();

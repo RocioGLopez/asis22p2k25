@@ -6,7 +6,7 @@ using CapaModelo_Seguridad;
 
 namespace CapaControlador_Seguridad
 {
-    public class Controlador
+    public class ControladorS
     {
         Sentencias sn = new Sentencias();
         public DataTable MostrarBitacora() => sn.Listar();

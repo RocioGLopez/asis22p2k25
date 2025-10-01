@@ -46,7 +46,7 @@ namespace CapaVista_Seguridad
             this.Dgv_Bitacora.Name = "Dgv_Bitacora";
             this.Dgv_Bitacora.RowHeadersWidth = 51;
             this.Dgv_Bitacora.RowTemplate.Height = 24;
-            this.Dgv_Bitacora.Size = new System.Drawing.Size(727, 286);
+            this.Dgv_Bitacora.Size = new System.Drawing.Size(789, 422);
             this.Dgv_Bitacora.TabIndex = 0;
             // 
             // label1
@@ -105,7 +105,7 @@ namespace CapaVista_Seguridad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(827, 571);
             this.Controls.Add(this.Btn_BuscarRango);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Dtp_SegundaFecha);

@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using CapaControlador_Seguridad;
+
 using CapaVista_Seguridad;
 using CapaControlador_Menu;
 using System.Data.Odbc;
@@ -22,6 +24,12 @@ namespace CapaVista_Menu
         Controlador cn = new Controlador();
         private bool Editar = false;
         private string idEmpleado = null;
+
+        int idUsuarioConectado = 1;
+        int codigoAplicacion = 1; // código de aplicación "Usuario"
+        CapaControlador_Seguridad.Controlador_Seguridad auditoriaBitacora = new CapaControlador_Seguridad.Controlador_Seguridad();
+
+        bool bEstado = true;
 
 
         public MenuGeneral()
@@ -61,7 +69,7 @@ namespace CapaVista_Menu
         {
 
             string rutaAyuda = @"C:\Users\WINDOWS\Desktop\examen analisis\asis22p2k25\ayudas\AyudaRisko\AyudaRiskoAS2.chm";
-            Help.ShowHelp(this, rutaAyuda, "MDI.html");
+            Help.ShowHelp(this, @"C:\Users\WINDOWS\Desktop\examen analisis\asis22p2k25\ayudas\AyudaRisko\AyudasRiscoAS2.chm", "MDI.html");
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -94,6 +102,9 @@ namespace CapaVista_Menu
                 {
                    Controlador.InsertarEmpleado(txtNombre.Text, txtDesc.Text, txtMarca.Text);
                     MessageBox.Show("Se insertó correctamente");
+                    //auditoriaBitacora.RegistrarAccion(1, 101, "INSERT tipo_puesto", true);
+                    auditoriaBitacora.RegistrarAccion(idUsuarioConectado, codigoAplicacion, "INS", bEstado);
+
                     //MostrarEmpleados();
                     limpiarForm();
                 }
@@ -138,12 +149,16 @@ namespace CapaVista_Menu
         private void btnEditar_Click(object sender, EventArgs e)
         {
             if (Dgv1.SelectedRows.Count > 0)
-            {
+            {   
+                auditoriaBitacora.RegistrarAccion(idUsuarioConectado, codigoAplicacion, "UPD", bEstado);
+
                 Editar = true;
                 txtNombre.Text = Dgv1.CurrentRow.Cells["Pk_Id_TIPO_PUESTO"].Value.ToString();
                 txtDesc.Text = Dgv1.CurrentRow.Cells["Cmp_NOMBRE_PUESTO"].Value.ToString();
                 txtMarca.Text = Dgv1.CurrentRow.Cells["Cmp_SALARIO"].Value.ToString();
                 txtNombre.Text = Dgv1.CurrentRow.Cells["Pk_Id_TIPO_PUESTO"].Value.ToString();
+                // registrar en bitácora
+               
             }
             else
                 MessageBox.Show("Seleccione una fila por favor");
@@ -157,6 +172,9 @@ namespace CapaVista_Menu
                 idEmpleado = Dgv1.CurrentRow.Cells["Pk_Id_TIPO_PUESTO"].Value.ToString();
                 Controlador.EliminarEmpleado(txtNombre.Text);
                 MessageBox.Show("Eliminado correctamente");
+                // registrar en bitácora
+                auditoriaBitacora.RegistrarAccion(idUsuarioConectado, codigoAplicacion, "DEL", bEstado);
+
                 MostrarEmpleados();
             }
             else
